@@ -10,10 +10,18 @@ class LinkedList
   end
   
   def append(sound)
-    @data = sound
-    @head = node
+    @head = Node.new(sound, nil)
   end
 
+  def count
+    head_arr = []
+    head_arr << head.data
+    head_arr.count
+  end
+
+  def to_string
+    head.data
+  end
 end
 
   

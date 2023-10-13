@@ -4,5 +4,6 @@ require 'pry'
 
 node = Node.new("plop", nil)
 list = LinkedList.new
+list.append("doop")
 
 binding.pry
