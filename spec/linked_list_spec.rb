@@ -44,7 +44,7 @@ RSpec.describe LinkedList do
     list.append("suu")
     list.prepend("dop")
     
-    expect(list.prepend).to eq("dop")
+    expect(list.to_string).to eq("dop plop suu")
   end
 end
 

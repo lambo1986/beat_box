@@ -24,7 +24,7 @@ class LinkedList
     count_arr = []
      node = @head
      count_arr << node.data
-     while node.next_node != nil
+     while node.next_node != nil #tried: until @head.next_node == nil
       node = node.next_node
       count_arr << node.data
      end
