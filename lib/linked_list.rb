@@ -24,13 +24,13 @@ class LinkedList
   #While next node exists, add data from next node to the array. Count items in Array.
   def count
     count_arr = []
-     node = @head
-     count_arr << node.data
+      node = @head
+      count_arr << node.data
      while node.next_node != nil #tried: until @head.next_node == nil --had help by peeking 
       node = node.next_node
       count_arr << node.data
      end
-     count_arr.count
+      count_arr.count
   end
   #Fill empty array with the data from @head, which came from previous nodes.
   #While next node exists, add data from next node to the array. 
@@ -60,7 +60,7 @@ class LinkedList
   #Make @head a new variable(node). 
 
   def insert(pos, sound)
-    node = head 
+    node = @head 
     (pos - 1).times do # --took much thought to understand
       raise "List not long enough" if node == nil  #--from stackoverflow... optional 
       node = node.next_node
@@ -70,9 +70,28 @@ class LinkedList
     new_node.next_node = node.next_node
     node.next_node = new_node
   end
-  #
+  #This is copied from the count method, but it's return was modified.
   def find(index, selection)
-
+    count_arr = []
+    node = @head
+    count_arr << node.data
+    while node.next_node != nil 
+      node = node.next_node
+      count_arr << node.data
+    end
+    count_arr = count_arr[index, selection]
+    count_arr.join" "
+  end
+  #Also borrowed from count method, with return modified.
+  def includes?(sound)
+    count_arr = []
+    node = @head
+    count_arr << node.data
+    while node.next_node != nil 
+      node = node.next_node
+      count_arr << node.data
+    end
+    count_arr.include?(sound)
   end
 end
 

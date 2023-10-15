@@ -70,13 +70,25 @@ RSpec.describe LinkedList do
 
   it "returns sounds(data) from specified index" do
     list = LinkedList.new
-    list.append("shi") # --append won't work more than twice
+    list.append("shi") 
     list.append("blop")
     list.prepend("deep")
     list.insert(1, "woo")  
     list.insert(3, "shu")  
-
+    
     expect(list.find(2, 1)).to eq("shi")
+  end
+
+  it "returns boolean if sound(data) is included in list" do
+    list = LinkedList.new
+    list.append("shi") 
+    list.append("blop")
+    list.prepend("deep")
+    list.insert(1, "woo")  
+    list.insert(3, "shu")  
+    
+    expect(list.includes?("deep")).to be true
+    expect(list.includes?("pde")).to be false
   end
 end
 
