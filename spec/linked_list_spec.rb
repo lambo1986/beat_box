@@ -11,7 +11,7 @@ RSpec.describe LinkedList do
  
   it "has a head" do
     list = LinkedList.new
- 
+   
     expect(list.head).to eq(nil)
   end
 
@@ -45,6 +45,16 @@ RSpec.describe LinkedList do
     list.prepend("dop")
     
     expect(list.to_string).to eq("dop plop suu")
+  end
+
+  it "will insert sound into index position" do
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    list.insert(1, "woo")
+   
+    expect(list.to_string).to eq("dop woo plop suu")
   end
 end
 
