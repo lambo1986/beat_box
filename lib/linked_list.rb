@@ -58,12 +58,14 @@ class LinkedList
       @head.next_node = prev_head # --this.
     end
   end
-  #Make @head a new variable(node). 
-
+  #Make @head a new variable(node). Moves the head(node) according to index position.
+  #Head gets moved to the next_node position of that node. End.. Then...
+  #Create a new Node instance and the old head is put onto the next_node of the new node....
+  #New node becomes the tail of the next node? This is still confusing for me.
   def insert(pos, sound)
     node = @head 
     (pos - 1).times do # --took much thought to understand
-      raise "List not long enough" if node == nil  #--from stackoverflow... optional 
+      raise "List not long enough" if node == nil  #--from stackoverflow... optional?
       node = node.next_node
     end                            
 
@@ -94,7 +96,10 @@ class LinkedList
     end
     count_arr.include?(sound)
   end
-  
+  #Moves the head of the node until its pointing to last node.
+  #Makes a variable out of the data of the last node, before
+  #replacing it with the nil next_node! Lastly, removed node is 
+  #returned as a string via interpolation.
   def pop
     node = @head
     until node.next_node.next_node == nil
