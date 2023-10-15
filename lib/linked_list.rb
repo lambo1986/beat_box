@@ -57,10 +57,18 @@ class LinkedList
       @head.next_node = prev_head # --this.
     end
   end
-  #EXPLAIN   
-  def insert(pos, sound)
-    
+  #Make @head a new variable(node). 
 
+  def insert(pos, sound)
+    node = head 
+    (pos - 1).times do # --took much thought to understand
+      raise "List not long enough" if node == nil  #--from stackoverflow... optional 
+      node = node.next_node
+    end                            
+
+    new_node = Node.new(sound)
+    new_node.next_node = node.next_node
+    node.next_node = new_node
   end
 end
 
