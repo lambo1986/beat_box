@@ -52,9 +52,31 @@ RSpec.describe LinkedList do
     list.append("plop")
     list.append("suu")
     list.prepend("dop")
-    list.insert(0, "woo")
-    binding.pry
+    list.insert(1, "woo")
+   
     expect(list.to_string).to eq("dop woo plop suu")
+  end
+
+  it "returns a new list of nodes" do
+    list = LinkedList.new
+    list.append("shi") # --append won't work more than twice
+    list.append("blop")
+    list.prepend("deep")
+    list.insert(1, "woo")  
+    list.insert(3, "shu")  # --had to use insert instead
+  
+    expect(list.to_string).to eq("deep woo shi shu blop")
+  end
+
+  it "returns sounds(data) from specified index" do
+    list = LinkedList.new
+    list.append("shi") # --append won't work more than twice
+    list.append("blop")
+    list.prepend("deep")
+    list.insert(1, "woo")  
+    list.insert(3, "shu")  
+
+    expect(list.find(2, 1)).to eq("shi")
   end
 end
 

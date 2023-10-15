@@ -70,6 +70,10 @@ class LinkedList
     new_node.next_node = node.next_node
     node.next_node = new_node
   end
+  #
+  def find(index, selection)
+
+  end
 end
 
   
