@@ -90,5 +90,18 @@ RSpec.describe LinkedList do
     expect(list.includes?("deep")).to be true
     expect(list.includes?("pde")).to be false
   end
+
+  it "removes last sound from list" do
+    list = LinkedList.new
+    list.append("shi") 
+    list.append("blop")
+    list.prepend("deep")
+    list.insert(1, "woo")  
+    list.insert(3, "shu")
+   
+    expect(list.pop).to eq("blop")
+    expect(list.pop).to eq("shu")
+    expect(list.to_string).to eq("deep woo shi")
+  end
 end
 

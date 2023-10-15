@@ -93,6 +93,10 @@ class LinkedList
     end
     count_arr.include?(sound)
   end
+
+  def pop
+    
+  end
 end
 
   
