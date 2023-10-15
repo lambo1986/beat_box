@@ -4,11 +4,12 @@ require 'pry'
 
 class LinkedList 
 
-  attr_reader :head
-  attr_accessor :head
+  attr_reader :head, :garbage
+  attr_accessor :head, :garbage
 
   def initialize
     @head = nil
+    @garbage = []
   
   end
   #If head is empty, fill with new node. If already occupied, 
@@ -93,9 +94,15 @@ class LinkedList
     end
     count_arr.include?(sound)
   end
-
+  
   def pop
-    
+    node = @head
+    until node.next_node.next_node == nil
+      node = node.next_node
+    end  # --just wanna say I figured this one out completely on my own
+    sound_deleted = node.next_node.data
+    node.next_node = node.next_node.next_node
+    "#{sound_deleted}"
   end
 end
 
