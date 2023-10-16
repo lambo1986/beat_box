@@ -4,8 +4,8 @@ require 'pry'
 
 class LinkedList 
 
-  attr_reader :head
-  attr_accessor :head
+  attr_reader :head, :data
+  attr_accessor :head, :data
 
   def initialize
     @head = nil

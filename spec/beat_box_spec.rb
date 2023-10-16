@@ -12,7 +12,23 @@ RSpec.describe BeatBox do
 
   it "has a list attribute from LinkedList" do
     bb = BeatBox.new
-    binding.pry
+   
     expect(bb.list).to be_instance_of(LinkedList)
+  end
+
+  it "can append multiple sounds to list" do
+    bb = BeatBox.new
+    bb.append("deep doo ditt")
+    
+    expect(bb.list.head.data).to eq("deep")
+    expect(bb.list.head.next_node.data).to eq("doo")
+  end
+
+  it "can count the number of data in list" do
+    bb = BeatBox.new
+    bb.append("deep doo ditt")
+    bb.append("woo hoo shu")
+    
+    expect(bb.count).to eq(6)
   end
 end
