@@ -4,13 +4,11 @@ require 'pry'
 
 class LinkedList 
 
-  attr_reader :head, :garbage
-  attr_accessor :head, :garbage
+  attr_reader :head
+  attr_accessor :head
 
   def initialize
     @head = nil
-    @garbage = []
-  
   end
   #If head is empty, fill with new node. If already occupied, 
   #attach new node to the end of the head where nil was.                      
@@ -104,7 +102,7 @@ class LinkedList
     node = @head
     until node.next_node.next_node == nil
       node = node.next_node
-    end  # --just wanna say I figured this one out completely on my own
+    end  
     sound_deleted = node.next_node.data
     node.next_node = node.next_node.next_node
     "#{sound_deleted}"
