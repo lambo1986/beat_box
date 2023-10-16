@@ -10,8 +10,26 @@ class BeatBox
   def initialize
     @list = LinkedList.new
   end
-  #Almost working. Takes sounds into array, reverses and prepends. 
-  #Needs to append in order. REVERSE THIS!
+
+  # def append(sounds)
+  #   sounds = sounds.split
+  #   sounds.each do |sound|
+  #     if @list.head == nil
+  #       @list.head = Node.new(sound)
+  #     else
+  #       while @list.head.next_node == nil
+  #         @list.head.next_node = Node.new(sound)
+  #       end
+  #     end
+  #   end
+  #   sound_last = sounds[-1]
+  #   while @list.head.next_node == nil
+  #     @list.head.next_node = Node.new(sound_last)
+  #   end
+  # end
+        
+    # Almost working. Takes sounds into array, reverses and prepends. 
+    # Needs to append in order. REVERSE THIS!
   def append(sounds)
     sounds = sounds.split.reverse
     sounds.each do |sound|
