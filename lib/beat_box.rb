@@ -42,7 +42,7 @@ class BeatBox
       end
     end
   end
-  #Basically taken from LinkedList
+  #Basically copied from LinkedList
   def count
     count_arr = []
       node = @list.head
@@ -52,6 +52,10 @@ class BeatBox
       count_arr << node.data
      end
       count_arr.count
+  end
+
+  def play
+    `say -r 137 -v Fred "#{@list.to_string}"`
   end
 end
     
