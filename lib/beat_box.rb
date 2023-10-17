@@ -55,8 +55,11 @@ class BeatBox
   end
 
   def play
-    `say -r 137 -v Fred "#{@list.to_string}"`
+    `say -r 153 -v Ralph "#{@list.to_string}"`
+  end
+
+  def play_this(beat)
+    @list.append(beat)
+    `say -r 177 -v Trinoids "#{beat}"`
   end
 end
-    
-

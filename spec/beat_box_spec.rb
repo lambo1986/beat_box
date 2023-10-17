@@ -32,10 +32,17 @@ RSpec.describe BeatBox do
     expect(bb.count).to eq(6)
   end
 
-  it "plays the sounds" do
+  it "plays the sounds added already" do
     bb = BeatBox.new
     bb.append("deep doo ditt woo hoo shu")
     
     expect(bb.play).to eq("") 
+  end
+
+  it "plays a string of sounds passed in" do
+    bb = BeatBox.new
+    bb.append("deep doo ditt woo hoo shu")
+    
+    expect(bb.play_this("bop boo bap")).to eq("")
   end
 end
