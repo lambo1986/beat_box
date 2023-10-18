@@ -27,8 +27,8 @@ class BeatBox
   #     @list.head.next_node = Node.new(sound_last)
   #   end
   # end
-        
-    # Almost working. Takes sounds into array, reverses and prepends. 
+
+    # Almost working. Takes sounds into array, reverses and prepends.
     # Needs to append in order. REVERSE THIS!
   def append(sounds)
     sounds = sounds.split.reverse
@@ -36,7 +36,7 @@ class BeatBox
       if @list.head == nil
         @list.head = Node.new(sound)
       else @list.head != nil
-        prev_head = @list.head   
+        prev_head = @list.head
         @list.head = Node.new(sound)
         @list.head.next_node = prev_head
       end
@@ -47,7 +47,7 @@ class BeatBox
     count_arr = []
       node = @list.head
       count_arr << node.data
-     while node.next_node != nil 
+     while node.next_node != nil
       node = node.next_node
       count_arr << node.data
      end
@@ -59,7 +59,7 @@ class BeatBox
   end
 
   def play_this(beat)
-    @list.append(beat)
+    # @list.append(beat)
     `say -r 177 -v Trinoids "#{beat}"`
   end
 end
