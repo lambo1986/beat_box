@@ -63,7 +63,7 @@ class LinkedList
   def insert(pos, sound)
     binding.pry
     node = @head
-    (pos - 1).times do # --took much thought to understand
+    (pos - 1).times do # --need clarification
       raise "List not long enough" if node == nil  #--from stackoverflow... optional?
       node = node.next_node
     end
